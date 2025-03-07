@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import os
 import requests
 import random
 
@@ -42,4 +43,5 @@ def index():
     return render_template("index.html", numero=numero, info_numero=info_numero, resultado=resultado)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8000))  # Obtiene el puerto de Azure o usa 8000 por defecto
+    app.run(host="0.0.0.0", port=port, debug=True)
