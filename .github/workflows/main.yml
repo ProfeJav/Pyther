@@ -3,7 +3,7 @@ name: Deploy Pyther
 on:
   push:
     branches:
-      - main  # Asegúrate de que el branch sea correcto
+      - master  # Asegúrate de que el branch sea correcto
 
 jobs:
   build:
